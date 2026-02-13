@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+.next/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
