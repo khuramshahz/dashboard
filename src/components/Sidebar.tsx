@@ -86,14 +86,14 @@ export default function Sidebar({ activeMenu, setActiveMenu, isOpen = true, onCl
           ${isMobileVariant
             ? 'fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 flex flex-col'
             : 'hidden lg:flex lg:flex-col lg:min-w-[16rem] lg:w-64 lg:flex-shrink-0 lg:h-[calc(100vh-4rem)] lg:sticky lg:top-16 lg:z-40'}
-          bg-[#0A192F] border-r border-[#0096FF]/15 shadow-2xl lg:shadow-none overflow-hidden
+          bg-[#0A192F] border-r border-[#0096FF]/15 shadow-2xl lg:shadow-none overflow-hidden pt-6
         `}
         style={isMobileVariant ? { zIndex: 999 } : undefined}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between p-4 border-b border-[#0096FF]/10 min-w-[16rem]">
-          <h2 className="text-[#0096FF] font-black tracking-widest text-[10px] uppercase"></h2>
+        <div className="flex items-center justify-between p-4 min-w-[16rem]">
+
           {isMobileVariant && (
             <button
               onClick={handleCloseClick}

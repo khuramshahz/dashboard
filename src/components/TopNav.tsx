@@ -39,8 +39,8 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
           <div className="flex flex-col justify-center sm:block min-w-0">
             <h1 className="text-sm sm:text-base md:text-lg tracking-wide truncate">
               <span className="text-[#0096FF]">EIFA</span>
-              <span className="text-white/60 mx-1 md:mx-2">–</span>
-              <span className="text-white/90 text-xs md:text-sm truncate">Explosive Intel</span>
+              <span className="hidden sm:inline text-white/60 mx-1 md:mx-2">–</span>
+              <span className="hidden sm:inline text-white/90 text-xs md:text-sm truncate">Explosive Intel</span>
             </h1>
           </div>
         </div>
@@ -72,9 +72,9 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
             <Settings className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          <button className="flex items-center gap-3 px-4 py-2 bg-[#2F4F4F]/30 hover:bg-[#2F4F4F]/50 rounded transition-colors border border-[#2F4F4F] flex-shrink-0">
+          <button className="flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 bg-[#2F4F4F]/30 hover:bg-[#2F4F4F]/50 rounded transition-colors border border-[#2F4F4F] flex-shrink-0">
             <User className="w-4 h-4 sm:w-5 sm:h-5 text-white/80" />
-            <span className="text-xs sm:text-sm text-white/90 whitespace-nowrap">Forensic Analyst</span>
+            <span className="hidden sm:block text-xs sm:text-sm text-white/90 whitespace-nowrap">Forensic Analyst</span>
           </button>
         </div>
       </div>
