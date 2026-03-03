@@ -58,7 +58,7 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
             <div key={notif.id} className="p-3 sm:p-4 border-b border-[#0096FF]/10 hover:bg-white/5 transition-colors">
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${notif.type === 'alert' ? 'bg-[#FF0000]' :
-                    notif.type === 'success' ? 'bg-[#00FF88]' : 'bg-[#0096FF]'
+                  notif.type === 'success' ? 'bg-[#00FF88]' : 'bg-[#0096FF]'
                   }`} />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs sm:text-sm text-white">{notif.message}</p>
@@ -145,7 +145,7 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
       {/* Nav starts exactly at sidebar right edge */}
       <nav className="fixed top-0 left-64 right-0 h-16 z-50 bg-gradient-to-r from-[#071225] to-[#030712] border-b border-[#0096FF]/20 flex items-center justify-between px-4">
         <div style={{ paddingLeft: '40px' }}>
-          <span className="text-sm md:text-base tracking-wide text-[#0096FF]">
+          <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-green-400">
             Explosive Intelligence & Forensic Analysis Tool
           </span>
         </div>
