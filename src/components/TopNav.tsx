@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Bell, Settings, User, X, Activity, Lock, AlertTriangle, Database, Menu } from 'lucide-react';
+import { Bell, Settings, User, X, Activity, Lock, Database, Menu } from 'lucide-react';
 import logoImage from 'figma:asset/77a28d02665bc232e09053c20449a74bee8c11da.png';
 
 interface TopNavProps {
@@ -19,74 +19,67 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 bg-gradient-to-r from-[#030712] via-[#071225] to-[#030712] border-b border-[#0096FF]/20 z-50">
-      <div className="h-full px-3 sm:px-4 md:px-6 flex items-center justify-between">
-        {/* Left: Hamburger, Logo & Title */}
-        <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0 mr-2">
+    <>
+      {/* SINGLE COMBINED HEADER FOR RESPONSIVENESS */}
+      <header className="fixed top-0 left-0 right-0 h-16 z-50 bg-gradient-to-r from-[#030712] via-[#071225] to-[#030712] border-b border-[#0096FF]/20 flex items-center justify-between px-2 sm:px-4">
+
+        {/* Left: Logo & Sidebar Toggle */}
+        <div className="flex items-center gap-2 sm:gap-3 lg:w-[240px] flex-shrink-0 h-full">
           <button
             onClick={onToggleSidebar}
-            className="lg:hidden p-2 hover:bg-white/5 rounded transition-colors text-white/80 focus:outline-none focus:ring-2 focus:ring-[#0096FF]/50 flex-shrink-0"
+            className="lg:hidden p-1.5 sm:p-2 hover:bg-white/5 rounded transition-colors text-white/80 focus:outline-none focus:ring-2 focus:ring-[#0096FF]/50 flex-shrink-0"
             aria-label="Toggle Sidebar"
           >
             <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-
           <img
             src={logoImage}
             alt="EIFA Logo"
-            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain flex-shrink-0"
+            className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
           />
-          <div className="flex flex-col justify-center sm:block min-w-0">
-            <h1 className="text-sm sm:text-base md:text-lg tracking-wide truncate">
-              <span className="text-[#0096FF]">EIFA</span>
-              <span className="hidden sm:inline text-white/60 mx-1 md:mx-2">–</span>
-              <span className="hidden sm:inline text-white/90 text-xs md:text-sm truncate">Explosive Intel</span>
-            </h1>
-          </div>
+          <span className="hidden sm:block text-sm sm:text-base tracking-wide text-[#0096FF] font-semibold">EIFA</span>
+        </div>
+
+        {/* Center: Title */}
+        <div className="flex-1 min-w-0 px-2 sm:px-4 flex items-center justify-center lg:justify-start lg:pl-10">
+          <span className="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl tracking-wide font-bold text-green-400 truncate block w-full text-center lg:text-left">
+            Explosive Intelligence & Forensic Analysis Tool
+          </span>
         </div>
 
         {/* Right: Icons */}
-        <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
+        <div className="flex items-center justify-end gap-1 sm:gap-2 md:gap-3 lg:w-[240px] flex-shrink-0">
           <button
-            onClick={() => {
-              setShowNotifications(!showNotifications);
-              setShowSettings(false);
-            }}
-            className="relative p-2 hover:bg-white/5 rounded transition-colors flex-shrink-0"
+            onClick={() => { setShowNotifications(!showNotifications); setShowSettings(false); }}
+            className="relative p-1.5 sm:p-2 hover:bg-white/5 rounded transition-colors flex-shrink-0"
             aria-label="Notifications"
           >
             <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-white/80" />
-            <span className="absolute top-0 right-0 min-w-[16px] sm:min-w-[18px] h-4 sm:h-[18px] px-1 bg-[#FF6B00] text-white text-[9px] sm:text-[10px] rounded-full flex items-center justify-center font-bold leading-none">
+            <span className="absolute top-0 right-0 min-w-[14px] sm:min-w-[18px] h-[14px] sm:h-[18px] px-1 bg-[#FF6B00] text-white text-[8px] sm:text-[10px] rounded-full flex items-center justify-center font-bold leading-none">
               {notifications.length}
             </span>
           </button>
 
           <button
-            onClick={() => {
-              setShowSettings(!showSettings);
-              setShowNotifications(false);
-            }}
-            className={`p-2 rounded transition-colors flex-shrink-0 ${showSettings ? 'bg-[#0096FF]/20 text-[#0096FF]' : 'hover:bg-white/5 text-white/80'}`}
+            onClick={() => { setShowSettings(!showSettings); setShowNotifications(false); }}
+            className={`p-1.5 sm:p-2 rounded transition-colors flex-shrink-0 ${showSettings ? 'bg-[#0096FF]/20 text-[#0096FF]' : 'hover:bg-white/5 text-white/80'}`}
             aria-label="Settings"
           >
             <Settings className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          <button className="flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 bg-[#2F4F4F]/30 hover:bg-[#2F4F4F]/50 rounded transition-colors border border-[#2F4F4F] flex-shrink-0">
+          <button className="flex items-center gap-1.5 sm:gap-3 px-2 sm:px-4 py-1.5 sm:py-2 bg-[#2F4F4F]/30 hover:bg-[#2F4F4F]/50 rounded transition-colors border border-[#2F4F4F] flex-shrink-0">
             <User className="w-4 h-4 sm:w-5 sm:h-5 text-white/80" />
-            <span className="hidden sm:block text-xs sm:text-sm text-white/90 whitespace-nowrap">Forensic Analyst</span>
+            <span className="hidden md:block text-xs sm:text-sm text-white/90 whitespace-nowrap">Forensic Analyst</span>
           </button>
         </div>
-      </div>
+      </header>
 
       {/* Notifications Dropdown */}
       {showNotifications && (
         <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setShowNotifications(false)}
-          />
-          <div className="fixed top-16 left-2 right-2 w-auto sm:left-auto sm:right-6 sm:w-96 bg-gradient-to-br from-[#0d1f3a] to-[#0A192F] border border-[#0096FF]/20 rounded-lg shadow-2xl shadow-black/50 z-50">
+          <div className="fixed inset-0 z-40" onClick={() => setShowNotifications(false)} />
+          <div className="fixed top-16 left-2 right-2 w-auto sm:left-auto sm:right-6 sm:w-96 bg-gradient-to-br from-[#0d1f3a] to-[#0A192F] border border-[#0096FF]/20 rounded-lg shadow-2xl shadow-black/50 z-[60]">
             <div className="p-3 sm:p-4 border-b border-[#0096FF]/20">
               <h3 className="text-white text-sm sm:text-base">Security Alerts</h3>
               <p className="text-xs text-white/60 mt-1">{notifications.length} unread notifications</p>
@@ -118,11 +111,8 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
       {/* Settings Dropdown */}
       {showSettings && (
         <>
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setShowSettings(false)}
-          />
-          <div className="fixed top-16 left-2 right-2 w-auto sm:left-auto sm:right-6 sm:w-80 bg-gradient-to-br from-[#0d1f3a] to-[#0A192F] border border-[#0096FF]/20 rounded-lg shadow-2xl shadow-black/50 z-50">
+          <div className="fixed inset-0 z-40" onClick={() => setShowSettings(false)} />
+          <div className="fixed top-16 left-2 right-2 w-auto sm:left-auto sm:right-6 sm:w-80 bg-gradient-to-br from-[#0d1f3a] to-[#0A192F] border border-[#0096FF]/20 rounded-lg shadow-2xl shadow-black/50 z-[60]">
             <div className="p-3 sm:p-4 border-b border-[#0096FF]/20">
               <h3 className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">System Settings</h3>
               <p className="text-[10px] text-[#0096FF] mt-0.5">Control Panel v4.2.0</p>
@@ -159,6 +149,6 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
           </div>
         </>
       )}
-    </nav >
+    </>
   );
 }

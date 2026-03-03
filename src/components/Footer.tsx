@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5">
               <Shield className="w-4 h-4 text-[#0096FF] shrink-0" />
               <span className="text-xs font-bold text-white/90 uppercase tracking-wider whitespace-nowrap">
-                National Forensic Agency
+                &nbsp;National Forensic Agency&nbsp;
               </span>
             </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <span className="hidden xs:inline text-white/20">|</span>
               <span className="text-xs text-white/50 uppercase tracking-widest whitespace-nowrap">
-                Secure Environment
+                Powered by MilGPT
               </span>
             </div>
           </div>
