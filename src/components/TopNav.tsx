@@ -122,8 +122,8 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
             <button onClick={onToggleSidebar} className="p-2 hover:bg-white/5 rounded transition-colors text-white/80" aria-label="Toggle Sidebar">
               <Menu className="w-5 h-5" />
             </button>
-            <img src={logoImage} alt="EIFA Logo" className="w-8 h-8 object-contain" />
-            <span className="text-sm tracking-wide text-[#0096FF] font-semibold">EIFA</span>
+            <img src={logoImage} alt="EIFA Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+            <span className="text-xl sm:text-2xl tracking-wide text-[#0096FF] font-bold">EIFA</span>
           </div>
           {iconBar}
         </header>
@@ -138,14 +138,14 @@ export default function TopNav({ onToggleSidebar, onShowSystemLogs, onShowSecuri
     <>
       {/* Logo zone over sidebar (w-64 = 256px matches sidebar width) */}
       <div className="fixed top-0 left-0 w-64 h-16 z-50 bg-gradient-to-r from-[#030712] to-[#071225] border-b border-[#0096FF]/20 flex items-center gap-3 px-4">
-        <img src={logoImage} alt="EIFA Logo" className="w-10 h-10 object-contain flex-shrink-0" />
-        <span className="text-base tracking-wide text-[#0096FF] font-semibold">EIFA</span>
+        <img src={logoImage} alt="EIFA Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
+        <span className="text-2xl sm:text-3xl tracking-wide text-[#0096FF] font-bold">EIFA</span>
       </div>
 
       {/* Nav starts exactly at sidebar right edge */}
       <nav className="fixed top-0 left-64 right-0 h-16 z-50 bg-gradient-to-r from-[#071225] to-[#030712] border-b border-[#0096FF]/20 flex items-center justify-between px-4">
-        <div style={{ paddingLeft: '40px' }}>
-          <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-green-400">
+        <div className="flex-1 min-w-0 mr-4" style={{ paddingLeft: '40px' }}>
+          <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide truncate block" style={{ color: '#FF6B00' }}>
             Explosive Intelligence & Forensic Analysis Tool
           </span>
         </div>

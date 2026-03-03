@@ -110,20 +110,21 @@ export default function Sidebar({ activeMenu, setActiveMenu, isOpen = true, onCl
                 className={`
                   w-full flex items-center justify-between gap-3 px-4 py-3 rounded transition-all text-left
                   ${isActive
-                    ? 'bg-[#0096FF]/15 text-[#0096FF] border-l-4 border-[#0096FF] pl-3'
+                    ? 'border-l-4 pl-3'
                     : 'text-white/60 hover:bg-white/5 hover:text-white border-l-4 border-transparent pl-3'
                   }
                 `}
+                style={isActive ? { backgroundColor: 'rgba(255, 107, 0, 0.15)', color: '#FF6B00', borderColor: '#FF6B00' } : {}}
               >
                 <div className="flex items-center gap-3">
-                  <Icon className="w-5 h-5 flex-shrink-0" />
+                  <Icon className="w-5 h-5 flex-shrink-0" style={{ color: '#FF6B00' }} />
                   <span className="text-sm font-medium">{item.name}</span>
                 </div>
                 {item.badge && (
                   <span
                     className={`
                       px-2 py-0.5 text-[10px] font-bold rounded flex-shrink-0
-                      ${item.badge === 'NEW' ? 'bg-[#00FF88] text-[#080C14]' : 'bg-white/10 text-white/70'}
+                      ${item.badge === 'NEW' ? 'bg-[#FF6B00] text-white' : 'bg-white/10 text-white/70'}
                     `}
                   >
                     {item.badge}
